@@ -4,6 +4,7 @@ import { useAssets } from 'expo-asset';
 import { ResizeMode, Video } from 'expo-av';
 import { Link } from 'expo-router';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { opacity } from 'react-native-reanimated/lib/typescript/reanimated2/Colors';
 
 const Page = () => {
   const [assets] = useAssets([require('@/assets/videos/intro.mp4')]);
@@ -20,20 +21,23 @@ const Page = () => {
           style={styles.video}
         />
       )}
-      <View style={{ marginTop: 80, padding: 20 }}>
-        <Text style={styles.header}>Ready to change the way you money?</Text>
+      <View style={{ marginTop: 320, padding: 20,  /* backgroundColor: 'black',  opacity:0.9 */  }}>
+        <Text style={styles.header}>carconnect</Text>
+        <Text style={styles.header}>hub</Text>
+       {/*  <Text style={styles.header}>Ready to make driving easier?</Text> */}
       </View>
 
       <View style={styles.buttons}>
         <Link
           href={'/login'}
-          style={[defaultStyles.pillButton, { flex: 1, backgroundColor: '#141518' }]}
+          style={[defaultStyles.pillButton, { flex: 1, backgroundColor: Colors.dark }]}
           asChild>
           <TouchableOpacity>
             <Text style={{ color: 'white', fontSize: 22, fontWeight: '500' }}>Log in</Text>
           </TouchableOpacity>
         </Link>
-        <Link href={'/login'}
+        <Link
+          href={'/signup'}
           style={[defaultStyles.pillButton, { flex: 1, backgroundColor: '#fff' }]}
           asChild>
           <TouchableOpacity>
